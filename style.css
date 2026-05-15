@@ -1,0 +1,137 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Animated Background */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #ff758c, #42e695);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Background Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glass Card */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    color: white;
+
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Floating Effect */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Heading */
+h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+/* Input */
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Result */
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    white-space: pre-line;
+}
+
+/* Toggle Button */
+#toggleMode {
+    margin-bottom: 15px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+
+/* 🌙 DARK MODE */
+.dark {
+    background: #121212 !important;
+}
+
+.dark .container {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.dark input {
+    background: #222;
+    color: white;
+}
+
+.dark button {
+    background: linear-gradient(135deg, #444, #222);
+}
+
+.dark #toggleMode {
+    background: #333;
+    color: white;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
